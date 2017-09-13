@@ -11,8 +11,11 @@
 
 举例如下
 
-  ImagePickerBrowser  *browser = [[ImagePickerBrowser alloc] initWithController:self type:PickerBrowserAlbum allowEdit:NO maxCount:1 selectedImages:nil isSelectOriginalPhoto:YES complete:^(NSArray<PhotoItem *> *images, BOOL isSelectOriginalPhoto) {
-        //这里是修改后照片所执行的方法
+  ImagePickerBrowser  *browser = [[ImagePickerBrowser alloc] initWithController:self type:PickerBrowserAlbum allowEdit:NO 
+  maxCount:1 selectedImages:nil isSelectOriginalPhoto:YES complete:^(NSArray<PhotoItem *> *images, BOOL isSelectOriginalPhoto) {
+        
+        //这里是修改后照片所执行的方法
         PhotoItem *item = [images firstObject];//拿到所做修改的图片
         [weak chooseImageFinish:item.image];//执行一个你需要的方法
-    }];
+    
+  }];
